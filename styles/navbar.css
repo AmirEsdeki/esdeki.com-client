@@ -1,8 +1,7 @@
 .navbar {
   position: relative;
-  transition: 0.5s;
+  transition: 0.65s;
   z-index: 999;
-  height: 250px;
 }
 
 img {
@@ -25,6 +24,17 @@ img {
   height: 60px;
 }
 
+.navbar .navbar-nav {
+  margin-top: -170px;
+  padding: 0;
+  border-bottom: 1px dashed rgba(256, 256, 256, 0.2);
+}
+
+.navbar.nav-sticky .navbar-nav {
+  margin-top: 0px !important;
+  border-bottom: none !important;
+}
+
 .navbar .dropdown-menu {
   margin-top: 0;
   border: 0;
@@ -37,8 +47,9 @@ img {
     position: absolute !important;
     width: 100%;
     background: transparent !important;
-    border-bottom: 1px dashed rgba(256, 256, 256, 0.2);
+    /* border-bottom: 1px dashed rgba(256, 256, 256, 0.2); */
     z-index: 9;
+    height: 250px;
   }
 
   .navbar.nav-sticky {
@@ -73,10 +84,6 @@ img {
   .navbar {
     padding: 15px;
     background: #ffffff !important;
-  }
-
-  .navbar .navbar-brand {
-    color: #ef233c;
   }
 
   .navbar .navbar-nav {
