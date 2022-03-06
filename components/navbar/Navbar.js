@@ -1,16 +1,38 @@
 import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
+  if (typeof window !== "undefined") {
+    const handleNavigation = (e) => {
+      var y = window.scrollY;
+      if (y > 0 && !navbarRef.current.className.includes("nav-sticky")) {
+        navbarRef.current.className =
+          navbarRef.current.className + " nav-sticky";
+      } else if (y < 1 && navbarRef.current.className.includes("nav-sticky")) {
+        navbarRef.current.className = navbarRef.current.className.replace(
+          " nav-sticky",
+          ""
+        );
+      }
+    };
+
+    useEffect(() => {
+      window.addEventListener("scroll", (e) => handleNavigation(e));
+
+      return () => {
+        window.removeEventListener("scroll", (e) => handleNavigation(e));
+      };
+    }, []);
+  }
+
+  const navbarRef = useRef(null);
+
   return (
-    <div className={`navbar navbar-expand-lg bg-light navbar-light`}>
+    <div className={`navbar navbar-expand-lg navbar-light`} ref={navbarRef}>
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            <img
-              src="/static/image/logo.png"
-              alt="logo picture"
-              width={180}
-            ></img>
+            <img src="/static/image/logo.png" alt="logo picture"></img>
           </a>
         </Link>
         <button
