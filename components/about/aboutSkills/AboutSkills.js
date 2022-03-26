@@ -27,10 +27,14 @@ const AboutSkills = () => {
       </div>
       <div className="skills">
         {skills.map((skill) => (
-          <SkillBar skill={skill.name} strength={skill.strength}></SkillBar>
+          <SkillBar
+            key={skill.name}
+            skill={skill.name}
+            strength={skill.strength}
+          ></SkillBar>
         ))}
       </div>
-      <a className="btn" href="">
+      <a className="btn btn-general" href="">
         Learn More
       </a>
     </div>

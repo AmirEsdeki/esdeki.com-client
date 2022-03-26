@@ -1,17 +1,22 @@
-import { useRef, useEffect } from "react";
+import { useCallback, useContext } from "react";
+import { PageContext } from "../../../context/page";
 
 const SkillBar = ({ skill, strength }) => {
-  var progressBarRef = useRef(null);
-
-  var isInViewport = (offset = 0) => {
-    if (progressBarRef) return false;
-    const top = progressBarRef.getBoundingClientRect().top;
-    return top + offset >= 0 && top - offset <= window.innerHeight;
-  };
-
-  useEffect(() => {
-    if (isInViewport(0)) progressBarRef.current.style.width = strength + "%";
-  }, [progressBarRef.getBoundingClientRect().top]);
+  const [state, dispatch] = useContext(PageContext);
+  const measuredRef = useCallback(
+    (node) => {
+      if (node !== null && typeof window !== "undefined") {
+        const top = node.getBoundingClientRect().top;
+        var isInViewport = top >= 0 && top <= window.innerHeight;
+        if (isInViewport) {
+          node.style.width = strength + "%";
+        } else {
+          node.style.width = "0%";
+        }
+      }
+    },
+    [state.y]
+  );
 
   return (
     <>
@@ -23,10 +28,7 @@ const SkillBar = ({ skill, strength }) => {
         <div
           className="progress-bar"
           role="progressbar"
-          aria-valuenow={`${strength}`}
-          aria-valuemin="0"
-          aria-valuemax="100"
-          ref={progressBarRef}
+          ref={measuredRef}
         ></div>
       </div>
     </>

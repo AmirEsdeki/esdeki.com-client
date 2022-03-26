@@ -28,6 +28,7 @@ img {
   margin-top: -170px;
   padding: 0;
   border-bottom: 1px dashed rgba(256, 256, 256, 0.2);
+  cursor: pointer;
 }
 
 .navbar.nav-sticky .navbar-nav {

@@ -1,10 +1,15 @@
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { PageContext } from "../../context/page";
+import { Link as AnimateLink, animateScroll as scroll } from "react-scroll";
+import About from "./../about/About";
 
 const Navbar = () => {
+  const [state, dispatch] = useContext(PageContext);
   if (typeof window !== "undefined") {
     const handleNavigation = (e) => {
       var y = window.scrollY;
+      dispatch({ type: "set_y", y: y });
       if (y > 0 && !navbarRef.current.className.includes("nav-sticky")) {
         navbarRef.current.className =
           navbarRef.current.className + " nav-sticky";
@@ -49,12 +54,30 @@ const Navbar = () => {
           id="navbarCollapse"
         >
           <div className="navbar-nav ml-auto">
-            <Link href="/#home">
-              <a className="nav-item nav-link active">Home</a>
-            </Link>
-            <Link href="/#about">
-              <a className="nav-item nav-link">About</a>
-            </Link>
+            <li className="nav-item nav-link">
+              <AnimateLink
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={900}
+              >
+                Home
+              </AnimateLink>
+            </li>
+
+            <li className="nav-item nav-link">
+              <AnimateLink
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-60}
+                duration={900}
+              >
+                About
+              </AnimateLink>
+            </li>
             <Link href="/#service">
               <a className="nav-item nav-link">Service</a>
             </Link>

@@ -2,6 +2,7 @@ import "../styles/application.scss";
 import Navbar from "./../components/navbar/Navbar";
 import Head from "next/head";
 import { useEffect } from "react";
+import { PageProvider } from "../context/page";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -33,8 +34,10 @@ function MyApp({ Component, pageProps }) {
         />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
-      <Navbar />
-      <Component {...pageProps} />
+      <PageProvider>
+        <Navbar />
+        <Component {...pageProps} />
+      </PageProvider>
     </>
   );
 }
