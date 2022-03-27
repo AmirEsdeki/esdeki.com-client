@@ -2,33 +2,32 @@ import Link from "next/link";
 import { useContext, useEffect, useRef } from "react";
 import { PageContext } from "../../context/page";
 import { Link as AnimateLink, animateScroll as scroll } from "react-scroll";
-import About from "./../about/About";
 
 const Navbar = () => {
   const [state, dispatch] = useContext(PageContext);
-  if (typeof window !== "undefined") {
-    const handleNavigation = (e) => {
-      var y = window.scrollY;
-      dispatch({ type: "set_y", y: y });
-      if (y > 0 && !navbarRef.current.className.includes("nav-sticky")) {
-        navbarRef.current.className =
-          navbarRef.current.className + " nav-sticky";
-      } else if (y < 1 && navbarRef.current.className.includes("nav-sticky")) {
-        navbarRef.current.className = navbarRef.current.className.replace(
-          " nav-sticky",
-          ""
-        );
-      }
-    };
 
-    useEffect(() => {
+  const handleNavigation = (e) => {
+    var y = window.scrollY;
+    dispatch({ type: "set_y", y: y });
+    if (y > 0 && !navbarRef.current.className.includes("nav-sticky")) {
+      navbarRef.current.className = navbarRef.current.className + " nav-sticky";
+    } else if (y < 1 && navbarRef.current.className.includes("nav-sticky")) {
+      navbarRef.current.className = navbarRef.current.className.replace(
+        " nav-sticky",
+        ""
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", (e) => handleNavigation(e));
 
       return () => {
         window.removeEventListener("scroll", (e) => handleNavigation(e));
       };
-    }, []);
-  }
+    }
+  }, []);
 
   const navbarRef = useRef(null);
 

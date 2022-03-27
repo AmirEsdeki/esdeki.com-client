@@ -8,30 +8,25 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (typeof document !== undefined) {
       let bootstrap = require("bootstrap/dist/js/bootstrap");
-      // // find all toasts
-      // let toastElList = [].slice.call(document.querySelectorAll(".toast"));
-      // let toastList = toastElList.map(function (toastEl) {
-      //   return new bootstrap.Toast(toastEl);
-      // });
-
-      // // show each toast explicitly
-      // toastList.forEach(function (element, index) {
-      //   element.show();
-      // });
     }
   }, []);
 
   return (
     <>
       <Head>
-        <title>Next and Bootstrap</title>
-        <meta charset="utf-8" />
-        <meta content="Free Website Template" name="keywords" />
-        <link href="img/favicon.ico" rel="icon" />
+        <meta charSet="utf-8" />
+        <title>I am Amir Esdeki - It's my Personal website</title>
         <meta
           name="description"
-          content="A demo about NextJS and Bootstrap 5"
-        />
+          content="Here you can find a lot about me! I post my special tasks, my daily chalenges and my helpful experiences here. Also you can find toturials and useful codes here! Stay tuned!"
+        ></meta>
+        <meta
+          content="stax,Amir Esdeki,Esdeki,Amir,developer,amir esteki,esteki,development,c#,اسدکی,امیر اسدکی,استکی,امیر استکی,استکس,سایت رسمی امیر اسدکی,امیر"
+          name="keywords"
+        ></meta>
+        <link href="img/favicon.ico" rel="icon" />
+        <meta name="robots" content="index, follow"></meta>
+        <meta name="author" content="Amir Esdeki"></meta>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
       <PageProvider>

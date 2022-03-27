@@ -21,7 +21,6 @@ img {
   top: 0;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  height: 60px;
 }
 
 .navbar .navbar-nav {
@@ -55,6 +54,7 @@ img {
 
   .navbar.nav-sticky {
     background: #ffffff !important;
+    height: 60px;
   }
 
   .navbar-light .navbar-nav .nav-link,
