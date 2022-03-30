@@ -98,6 +98,10 @@
   .hero {
     height: 100vh;
   }
+
+  .hero-box {
+    height: 100vh;
+  }
 }
 
 @media (max-width: 991.98px) {
