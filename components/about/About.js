@@ -4,7 +4,7 @@ import AboutSkills from "./aboutSkills/AboutSkills";
 const About = () => {
   return (
     <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
-      <div className="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+      <div className="about" id="about">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6">
