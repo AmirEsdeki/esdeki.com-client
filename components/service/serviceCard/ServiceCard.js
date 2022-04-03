@@ -4,12 +4,12 @@ import { Animated } from "react-animated-css";
 const ServiceCard = () => {
   return (
     <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
-      <div class="col-lg-6">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fa fa-laptop"></i>
+      <div className="col-lg-6">
+        <div className="service-item">
+          <div className="service-icon">
+            <i className="fa fa-laptop"></i>
           </div>
-          <div class="service-text">
+          <div className="service-text">
             <h3>Web Design</h3>
             <p>
               Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
