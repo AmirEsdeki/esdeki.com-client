@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>I am Amir Esdeki - It's my Personal website</title>
+        <title>I am Amir Esdeki - It&apos;s my Personal website</title>
         <meta
           name="description"
           content="Here you can find a lot about me! I post my special tasks, my daily chalenges and my helpful experiences here. Also you can find toturials and useful codes here! Stay tuned!"
