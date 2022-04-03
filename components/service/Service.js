@@ -1,6 +1,6 @@
 import React from "react";
 import { Animated } from "react-animated-css";
-import ServiceCard from "./serviceCard/serviceCard";
+import ServiceCard from "./serviceCard/ServiceCard";
 
 const Service = () => {
   return (
