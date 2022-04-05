@@ -1,10 +1,28 @@
 import "../styles/application.scss";
 import Navbar from "./../components/navbar/Navbar";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
+// import { useRouter } from "next/router";
 import { PageProvider } from "../context/page";
 
 function MyApp({ Component, pageProps }) {
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   const routeChangeStartHandler = () => setLoading(true);
+
+  //   const routeChangeEndHandler = () => setLoading(false);
+
+  //   router.events.on("routeChangeStart", routeChangeStartHandler);
+  //   router.events.on("routeChangeComplete", routeChangeEndHandler);
+  //   router.events.on("routeChangeError", routeChangeEndHandler);
+  //   return () => {
+  //     router.events.off("routeChangeStart", routeChangeStartHandler);
+  //     router.events.off("routeChangeComplete", routeChangeEndHandler);
+  //     router.events.off("routeChangeError", routeChangeEndHandler);
+  //   };
+  // }, [router]);
+
   useEffect(() => {
     if (typeof document !== undefined) {
       let bootstrap = require("bootstrap/dist/js/bootstrap");

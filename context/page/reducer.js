@@ -5,6 +5,11 @@ export const reducer = (state, action) => {
         ...state,
         y: action.y,
       };
+    case "set_loaded_images":
+      return {
+        ...state,
+        loadedImages: action.loadedImages,
+      };
 
     default:
       return state;
@@ -13,4 +18,5 @@ export const reducer = (state, action) => {
 
 export const initialState = {
   y: 0,
+  loadedImages: 0,
 };

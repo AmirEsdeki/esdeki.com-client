@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useRef } from "react";
 import { PageContext } from "../../context/page";
 import { Link as AnimateLink, animateScroll as scroll } from "react-scroll";
+import logoPic from "../../public/static/image/logo.png";
 
 const Navbar = () => {
   const [state, dispatch] = useContext(PageContext);
@@ -36,7 +38,16 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            <img src="/static/image/logo.png" alt="logo picture"></img>
+            <Image
+              src={logoPic}
+              alt="logo picture"
+              onLoad={() => {
+                dispatch({
+                  type: "set_loaded_images",
+                  loadedImages: state.loadedImages + 1,
+                });
+              }}
+            />
           </a>
         </Link>
         <button
