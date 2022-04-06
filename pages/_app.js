@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
           content="stax,Amir Esdeki,Esdeki,Amir,developer,amir esteki,esteki,development,c#,اسدکی,امیر اسدکی,استکی,امیر استکی,استکس,سایت رسمی امیر اسدکی,امیر"
           name="keywords"
         ></meta>
-        <link href="img/favicon.ico" rel="icon" />
+        <link href="static/Image/favicon.ico" rel="icon" />
         <meta name="robots" content="index, follow"></meta>
         <meta name="author" content="Amir Esdeki"></meta>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />

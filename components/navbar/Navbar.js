@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useRef } from "react";
 import { PageContext } from "../../context/page";
@@ -38,16 +37,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            <Image
-              src={logoPic}
-              alt="logo picture"
-              onLoad={() => {
-                dispatch({
-                  type: "set_loaded_images",
-                  loadedImages: state.loadedImages + 1,
-                });
-              }}
-            />
+            <img src="/static/image/logo.png" alt="logo picture" />
           </a>
         </Link>
         <button
