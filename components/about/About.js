@@ -1,14 +1,32 @@
+import { useContext, useCallback, useState } from "react";
 import { Animated } from "react-animated-css";
 import AboutSkills from "./aboutSkills/AboutSkills";
 import Image from "next/image";
-import { useContext } from "react";
 import { PageContext } from "../../context/page";
 
 const About = () => {
   const [state, dispatch] = useContext(PageContext);
+  const [animate, setAnimate] = useState(false);
+  const measuredRef = useCallback(
+    (node) => {
+      if (node !== null && typeof window !== "undefined") {
+        const top = node.getBoundingClientRect().top;
+        var isInViewport = top >= 0 && top <= window.innerHeight;
+        if (
+          isInViewport &&
+          state.homePageLoaded &&
+          state.showedPreloaderSufficiently
+        ) {
+          setAnimate(true);
+        }
+      }
+    },
+    [state.y]
+  );
+
   return (
-    <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
-      <div className="about" id="about">
+    <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={animate}>
+      <div className="about" id="about" ref={measuredRef}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6">

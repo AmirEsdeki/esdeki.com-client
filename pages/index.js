@@ -22,7 +22,7 @@ export default function Home() {
           type: "showed_preloader_sufficiently",
           showedPreloaderSufficiently: true,
         });
-      }, 5000);
+      }, 2400);
 
       return () => {};
     }

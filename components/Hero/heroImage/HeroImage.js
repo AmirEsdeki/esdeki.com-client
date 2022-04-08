@@ -8,7 +8,10 @@ const HeroImage = () => {
   const [state, dispatch] = useContext(PageContext);
   return (
     <div className="col-sm-12 col-md-6 d-none d-md-block">
-      <Animated isVisible={true}>
+      <Animated
+        isVisible={state.homePageLoaded && state.showedPreloaderSufficiently}
+        animationInDuration={2000}
+      >
         <div className="hero-image">
           <Image
             src={heroPic}

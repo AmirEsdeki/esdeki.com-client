@@ -1,15 +1,17 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { PageContext } from "../../../context/page";
 
 const SkillBar = ({ skill, strength }) => {
   const [state, dispatch] = useContext(PageContext);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const measuredRef = useCallback(
     (node) => {
-      if (node !== null && typeof window !== "undefined") {
+      if (node !== null && typeof window !== "undefined" && !hasAnimated) {
         const top = node.getBoundingClientRect().top;
         var isInViewport = top >= 0 && top <= window.innerHeight;
         if (isInViewport) {
           node.style.width = strength + "%";
+          setHasAnimated(true);
         } else {
           node.style.width = "0%";
         }
