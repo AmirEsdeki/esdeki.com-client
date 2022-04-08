@@ -19,7 +19,7 @@ export default function Document() {
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
         />
       </Head>
-      <body data-spy="scroll" data-target=".navbar" data-offset="51">
+      <body>
         <Main />
         <NextScript />
       </body>

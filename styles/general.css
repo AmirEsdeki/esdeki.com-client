@@ -4,6 +4,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.hidden-overflow {
+  overflow-y: hidden;
+}
+
 h1,
 h2,
 h3,

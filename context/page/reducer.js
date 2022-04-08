@@ -5,10 +5,15 @@ export const reducer = (state, action) => {
         ...state,
         y: action.y,
       };
-    case "set_loaded_images":
+    case "set_homepage_loaded":
       return {
         ...state,
-        loadedImages: action.loadedImages,
+        homePageLoaded: action.homePageLoaded,
+      };
+    case "showed_preloader_sufficiently":
+      return {
+        ...state,
+        showedPreloaderSufficiently: action.showedPreloaderSufficiently,
       };
 
     default:
@@ -18,5 +23,6 @@ export const reducer = (state, action) => {
 
 export const initialState = {
   y: 0,
-  loadedImages: 0,
+  homePageLoaded: false,
+  showedPreloaderSufficiently: false,
 };
