@@ -3,6 +3,7 @@ import { Animated } from "react-animated-css";
 import AboutSkills from "./aboutSkills/AboutSkills";
 import Image from "next/image";
 import { PageContext } from "../../context/page";
+import aboutPic from "../../public/static/image/about.jpg";
 
 const About = () => {
   const [state, dispatch] = useContext(PageContext);
@@ -32,7 +33,7 @@ const About = () => {
             <div className="col-lg-6">
               <div className="about-img">
                 <Image
-                  src="/static/image/about.jpg"
+                  src={aboutPic}
                   alt="Image"
                   width="30%"
                   height="40%"
