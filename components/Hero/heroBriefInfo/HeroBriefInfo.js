@@ -27,7 +27,7 @@ const HeroBriefInfo = () => {
         </div>
         <div className="hero-btn">
           <a className="btn" href="">
-            Get my resume
+            My Resume
           </a>
           <a className="btn" href="">
             Contact Me
