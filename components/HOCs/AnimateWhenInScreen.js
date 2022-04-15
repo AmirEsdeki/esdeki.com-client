@@ -1,5 +1,5 @@
-import { PageContext } from "../context/page";
-import React, { useContext, useState, useCallback } from "react";
+import { PageContext } from "../../context/page";
+import React, { useContext, useState, useCallback, useEffect } from "react";
 import { Animated } from "react-animated-css";
 
 const AnimateWhenInScreen = ({ children, animationIn, animationOut }) => {

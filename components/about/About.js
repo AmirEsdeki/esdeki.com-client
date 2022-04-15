@@ -1,4 +1,4 @@
-import AnimateWhenInScreen from "../../hooks/AnimateWhenInScreen";
+import AnimateWhenInScreen from "../HOCs/AnimateWhenInScreen";
 import AboutSkills from "./aboutSkills/AboutSkills";
 import Image from "next/image";
 import aboutPic from "../../public/static/image/about.jpg";
