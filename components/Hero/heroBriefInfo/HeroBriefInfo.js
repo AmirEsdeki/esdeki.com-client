@@ -26,7 +26,11 @@ const HeroBriefInfo = () => {
           )}
         </div>
         <div className="hero-btn">
-          <a className="btn" href="">
+          <a
+            className="btn"
+            href="static/files/Amir-Esdeki-Resume.pdf"
+            target={"_blank"}
+          >
             My Resume
           </a>
           <a className="btn" href="">
