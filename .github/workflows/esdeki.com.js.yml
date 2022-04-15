@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: cd _work/esdeki.com-client/esdeki.com-client/
-          pm2 stop 0
-          npm i
-          npm run build
-          pm2 start 0
-          pm2 save
+      - run: pm2 stop 0
+      - run: npm i
+      - run: npm run build
+      - run: pm2 start 0
+      - run: pm2 save
